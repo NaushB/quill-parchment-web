@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import AdminClient from "./AdminClient";
 
 export default async function AdminPage() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const auth = cookieStore.get("admin_auth");
   if (auth?.value !== process.env.ADMIN_PASSWORD) {
     redirect("/admin/login");

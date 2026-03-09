@@ -1,9 +1,19 @@
-export default function AdminPage() {
-  return (
-    <div style={{maxWidth:"900px",margin:"0 auto",padding:"80px 24px"}}>
-      <p style={{color:"#c9973a",fontFamily:"monospace",fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",marginBottom:"16px"}}>Admin</p>
-      <h1 style={{fontFamily:"Georgia,serif",fontSize:"40px",fontWeight:900,color:"#fff",marginBottom:"32px"}}>Dashboard</h1>
-      <p style={{color:"#8a7f6e",fontSize:"16px"}}>Admin dashboard — coming soon.</p>
-    </div>
-  );
+import { neon } from "@neondatabase/serverless";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import AdminClient from "./AdminClient";
+
+export default async function AdminPage() {
+  const cookieStore = cookies();
+  const auth = cookieStore.get("admin_auth");
+  if (auth?.value !== process.env.ADMIN_PASSWORD) {
+    redirect("/admin/login");
+  }
+  const sql = neon(process.env.DATABASE_URL!);
+  await sql`CREATE TABLE IF NOT EXISTS leads (id SERIAL PRIMARY KEY, name VARCHAR(200) NOT NULL, email VARCHAR(200) NOT NULL, service VARCHAR(100), word_count INTEGER, message TEXT, status VARCHAR(50) DEFAULT 'new', created_at TIMESTAMP DEFAULT NOW())`;
+  await sql`CREATE TABLE IF NOT EXISTS completed_jobs (id SERIAL PRIMARY KEY, client_name TEXT, project_type TEXT, word_count INTEGER, completed_at TIMESTAMP DEFAULT NOW())`;
+  const leads = await sql`SELECT * FROM leads ORDER BY created_at DESC`;
+  const jobs = await sql`SELECT * FROM completed_jobs ORDER BY completed_at DESC`;
+  const thisMonth = leads.filter((l: any) => new Date(l.created_at) > new Date(new Date().setDate(1)));
+  return <AdminClient leads={leads} jobs={jobs} totalLeads={leads.length} monthLeads={thisMonth.length} jobsCompleted={jobs.length} />;
 }

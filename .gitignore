@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+.DS_Store
+*.pdf
+chroma_db/
+*.mp3
+*.wav

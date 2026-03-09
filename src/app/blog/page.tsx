@@ -1,28 +1,10 @@
-import Link from "next/link"
-import { getPosts } from "../../lib/sanity"
-
-export default async function BlogPage() {
-
-  const posts = await getPosts()
-
+export default function BlogPage() {
   return (
-    <div style={{maxWidth:"800px",margin:"0 auto",padding:"40px"}}>
-      <h1 style={{fontSize:"36px"}}>Blog</h1>
-
-      {posts?.map((post:any)=>(
-        <div key={post.slug.current} style={{marginTop:"30px"}}>
-
-          <Link href={`/blog/${post.slug.current}`}>
-            <h2>{post.title}</h2>
-          </Link>
-
-          <p>{new Date(post.publishedAt).toDateString()}</p>
-
-          <p>{post.excerpt}</p>
-
-        </div>
-      ))}
-
+    <div style={{maxWidth:"800px",margin:"0 auto",padding:"80px 24px"}}>
+      <p style={{color:"#c9973a",fontFamily:"monospace",fontSize:"12px",letterSpacing:"3px",textTransform:"uppercase",marginBottom:"16px"}}>Blog</p>
+      <h1 style={{fontFamily:"Georgia,serif",fontSize:"52px",fontWeight:900,color:"#fff",lineHeight:1.1,marginBottom:"16px"}}>Proofreading Insights</h1>
+      <div style={{width:"60px",height:"2px",background:"#c9973a",marginBottom:"24px"}}></div>
+      <p style={{color:"#8a7f6e",fontSize:"17px",lineHeight:1.8}}>Content coming soon — check back weekly for proofreading tips and writing advice from Khurram.</p>
     </div>
-  )
+  );
 }

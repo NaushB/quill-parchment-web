@@ -1,23 +1,7 @@
-import { getPosts } from "../../lib/sanity"
-import { PortableText } from "@portabletext/react"
-
-export default async function BlogPost({ params }: { params:{slug:string}}) {
-
-  const post = await getPost(params.slug)
-
-  if(!post){
-    return <div>Post not found</div>
-  }
-
+export default function BlogPost({ params }: { params: { slug: string } }) {
   return (
-    <article style={{maxWidth:"700px",margin:"0 auto",padding:"40px"}}>
-
-      <h1>{post.title}</h1>
-
-      <p>{new Date(post.publishedAt).toDateString()}</p>
-
-      <PortableText value={post.body}/>
-
-    </article>
-  )
+    <div style={{maxWidth:"800px",margin:"0 auto",padding:"80px 24px"}}>
+      <p style={{color:"#8a7f6e"}}>Post not found: {params.slug}</p>
+    </div>
+  );
 }

@@ -1,12 +1,13 @@
 import { defineConfig, defineField, defineType } from "sanity";
 import { structureTool } from "sanity/structure";
+import { visionTool } from "@sanity/vision";
 
 export default defineConfig({
   name: "default",
   title: "Quill & Parchment",
   projectId: "jg8ej8xn",
   dataset: "production",
-  plugins: [structureTool()],
+  plugins: [structureTool(), visionTool()],
   schema: {
     types: [
       defineType({

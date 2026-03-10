@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body style={{ background: "#0f0e0b", color: "#e8e4dc", margin: 0, fontFamily: "Georgia, serif" }}>
         <nav style={{ position: "sticky", top: 0, zIndex: 100, background: "#0f0e0b", borderBottom: "1px solid #2d2820", padding: "0 32px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "72px" }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
-            <Image src="/logo2.jpeg" alt="Quill & Parchment" width={52} height={52} style={{ borderRadius: "50%", border: "2px solid #c9973a" }} />
+            <Image src="/logo_final.png" alt="Quill & Parchment" width={72} height={72} style={{  }} />
             <span style={{ fontFamily: playfair.style.fontFamily, fontSize: "18px", color: "#c9973a", fontWeight: 700 }}>Quill & Parchment</span>
           </Link>
           <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "40px" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <Image src="/logo2.jpeg" alt="Quill & Parchment" width={44} height={44} style={{ borderRadius: "50%", border: "2px solid #c9973a" }} />
+                <Image src="/logo_final.png" alt="Quill & Parchment" width={60} height={60} style={{  }} />
                 <div style={{ fontFamily: playfair.style.fontFamily, fontSize: "16px", color: "#c9973a" }}>Quill & Parchment</div>
               </div>
               <div style={{ color: "#8a7f6e", fontSize: "13px", lineHeight: 1.7 }}>Rule-Based. Reporter-Focused. Reliable.</div>

@@ -10,7 +10,7 @@ export default function Home() {
         </h1>
         <div style={{ width: "60px", height: "2px", background: "#c9973a", margin: "24px auto" }}></div>
         <p style={{ color: "#8a7f6e", fontSize: "18px", lineHeight: 1.7, maxWidth: "600px", marginBottom: "40px" }}>
-          Expert transcript proofreading for court reporters across Canada. Meticulous annotations, dependable turnaround, and deep familiarity with Morson's, BGGP, and Gregg.
+          Expert transcript proofreading for court reporters across North America. Meticulous annotations, dependable turnaround, and deep familiarity with Morson's, BGGP, and Gregg.
         </p>
         <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
           <Link href="/contact" style={{ background: "#c9973a", color: "#0f0e0b", padding: "16px 36px", borderRadius: "6px", fontFamily: "monospace", fontSize: "14px", letterSpacing: "2px", textTransform: "uppercase", fontWeight: 700, textDecoration: "none" }}>Get a Free Quote</Link>

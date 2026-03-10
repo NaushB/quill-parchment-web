@@ -23,7 +23,7 @@ export default function Rates() {
       </div>
       <div style={{background:"#1a1813",border:"1px solid #2d2820",borderRadius:"8px",padding:"28px",marginBottom:"32px"}}>
         <h3 style={{fontFamily:"Georgia,serif",color:"#e8e4dc",marginBottom:"16px"}}>Additional Notes</h3>
-        {[["Complexity Surcharge","+$0.10/page for technical, multi-exhibit, or complex transcripts. Confirmed before work begins."],["Standard Page","25 lines × 8–10 words per line."],["Payment","Invoiced upon delivery. E-transfer accepted."],["Minimum","No minimum page count."]].map(([t,d])=>(
+        {[["Complexity Surcharge","+$0.10/page when error density is high — specifically, when at least 50% of pages require significantly more correction time. Assessed after review and confirmed before any additional charge applies."],["Standard Page","25 lines × 8–10 words per line."],["Payment","Invoiced upon delivery. PayPal, WISE, and standard banking channels accepted."],["Minimum","No minimum page count."]].map(([t,d])=>(
           <div key={t} style={{display:"flex",gap:"16px",padding:"12px 0",borderBottom:"1px solid #2d2820"}}>
             <div style={{color:"#c9973a",fontFamily:"monospace",fontSize:"13px",minWidth:"160px"}}>{t}</div>
             <div style={{color:"#8a7f6e",fontSize:"14px"}}>{d}</div>

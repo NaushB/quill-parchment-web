@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Quill & Parchment
           </Link>
           <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
-            {[["Services","/services"],["Rates","/rates"],["Samples","/samples"],["How It Works","/how-it-works"],["About","/about"],["Contact","/contact"]].map(([label,href]) => (
+            {[["Services","/services"],["Rates","/rates"],["Samples","/samples"],["How It Works","/how-it-works"],["About","/about"],["Blog","/blog"],["Contact","/contact"]].map(([label,href]) => (
               <Link key={href} href={href} style={{ color: "#8a7f6e", textDecoration: "none", fontSize: "14px", fontFamily: "monospace" }}>{label}</Link>
             ))}
             <Link href="/contact" style={{ background: "#c9973a", color: "#0f0e0b", padding: "8px 18px", borderRadius: "4px", fontSize: "13px", fontFamily: "monospace", fontWeight: 700, textDecoration: "none" }}>Get a Quote</Link>
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <div>
               <div style={{ color: "#e8e4dc", fontFamily: "monospace", fontSize: "12px", letterSpacing: "2px", marginBottom: "16px" }}>SERVICES</div>
-              {[["Transcript Proofreading","/services"],["Rates","/rates"],["Samples","/samples"],["Preferences","/preferences"]].map(([l,h]) => (
+              {[["Transcript Proofreading","/services"],["Rates","/rates"],["Samples","/samples"],["Preferences","/preferences"],["Blog","/blog"]].map(([l,h]) => (
                 <div key={h}><Link href={h} style={{ color: "#8a7f6e", fontSize: "14px", textDecoration: "none" }}>{l}</Link></div>
               ))}
             </div>

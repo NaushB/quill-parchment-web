@@ -2,9 +2,10 @@ import { getPost } from "../../../lib/sanity";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   let post: any = null;
-  try { post = await getPost(params.slug); } catch {}
+  try { post = await getPost(slug); } catch {}
   if (!post) return (
     <div style={{maxWidth:"800px",margin:"0 auto",padding:"80px 24px"}}>
       <p style={{color:"#8a7f6e"}}>Post not found.</p>
